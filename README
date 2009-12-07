@@ -1,0 +1,60 @@
+This has been tested with Ubuntu distributions.
+If your nano binary has been compiled with the color and nanorc options (which it should) and if the other files referenced reside inside /usr/share/nano/*.nanorc then everything should work fine.
+If not, then removing the files as per the Uninstallation process will resolve any issues.
+
+
+INSTALLATION:
+-------------
+Download the .tar.gz file (which normally you have if you are reading this file). Normally under your home folder (~) you can untar/degzip it with:
+
+tar xzvf erb_for_nanoX.X.tar.gz
+
+After issuing this command, one of the necessary files is already in place. The .nanorc file contains the directives for a set of .nanorc code syntax/highlighting definitions already provided by nano.
+Only you just informed nano to load these directives when nano-ing any files from your *NIX account.
+This will allow you to have code syntax for HTML, RUBY, PYTHON, PERL, C, JAVA, TEX, SH and of course ERB (both .erb and .rhtml files).
+For the latter, the erb.nanorc file is being used (the other file extracted in your home folder).
+
+If you want to tidy things up (and have root access to your system):
+
+Change the link to the erb.nanorc file inside the .nanorc file from:
+
+import "~/erb.nanorc"
+
+to
+
+import "/usr/share/nano/erb.nanorc"
+
+which can be done by opening the file... with nano of course... issuing:
+
+nano .nanorc
+
+After changing the definition (exit by issuing Ctrl+X and then 'y' to save the file), move the erb.nanorc files from your home folder (where you just extracted it) to somewhere where it makes more sense (i.e. with the other *.nanorc files) by issuing:
+
+sudo mv erb.nanorc /usr/share/nano/
+
+for which you will be asked for your password (if you are a sudoer).
+
+You are done! The next time you open a file in nano, based on the extension, it will know how to make it more easy to read (and aesthetically pleasing).
+
+
+UNINSTALLATION:
+---------------
+If you did not make any changes to the files (e.g. moving the erb.nanorc file to the /usr/share/nano/ folder) then to completely uninstall the script you need to remove the two files:
+
+cd ~
+rm .nanorc erb.nanorc
+
+Otherwise:
+
+cd ~
+rm .nanorc /usr/share/nano/erb.nanorc
+
+
+CREDITS:
+--------
+Go to the current templates for HTML and Ruby with some minor changes and merging.
+
+
+LICENSE:
+--------
+Licensed under the CC (Creative Commons) License.

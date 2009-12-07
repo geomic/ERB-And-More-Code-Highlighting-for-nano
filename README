@@ -1,3 +1,5 @@
+*** The following Installation instructions apply if you download the erb_for_nanoX.X.tar.gz file in your home folder (~). ***
+
 This has been tested with Ubuntu distributions.
 If your nano binary has been compiled with the color and nanorc options (which it should) and if the other files referenced reside inside /usr/share/nano/*.nanorc then everything should work fine.
 If not, then removing the files as per the Uninstallation process will resolve any issues.
